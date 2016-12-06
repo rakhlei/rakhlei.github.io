@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Puppies!</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <script src="jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/p5.min.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+    <script type="text/javascript" src="js/p5.dom.js"></script>
+    <script type="text/javascript" src="js/p5.sound.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>A Page for Puppy Lovers</h1>
+
+    <!-- CAROUSEL -->
+    <div id="carousel-example-generic" class="center carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+                <img src="photos/beagleV2.jpg" alt="First slide" class="img-fluid">
+            </div>
+            <div class="carousel-item center-block">
+                <img src="photos/frenchBulldogV2.jpg" alt="Second slide" class="img-fluid">
+            </div>
+            <div class="carousel-item center-block">
+                <img src="photos/goldenPuppiesV2.jpg" alt="Third slide" class="img-fluid">
+            </div>
+        </div>
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="icon-prev" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="icon-next" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!-- END CAROUSEL -->
+
+    <br>
+    <br>
+    <div>
+        <h4>Vote for Famous Puppy of the Week!</h4>
+    </div>
+    <br>
+
+    <!-- PHOTOS TO VOTE -->
+    <div class="row">
+        <div class="col-xs-6 col-sm-2">
+        </div>
+        <div class="col-xs-6 col-sm-2">
+            <img src="photos/boo.jpg" alt="boo"></img>
+            <h5>Boo!</h5>
+            <label class="btn btn-info center-block" id="booLabel">
+				<input type="radio" name="options" id="boo" autocomplete="off">
+				<span class="glyphicon glyphicon-ok"></span>
+			</label>
+            <h6 id="booPercent"></h6>
+        </div>
+        <div class="col-xs-6 col-sm-2">
+            <img src="photos/marnie.jpg" alt="marnie"></img>
+            <h5>Marnie the Dog</h5>
+            <label class="btn btn-info" id="marnieLabel">
+				<input type="radio" name="options" id="marnie" autocomplete="off">
+				<span class="glyphicon glyphicon-ok"></span>
+			</label>
+            <h6 id="marniePercent"></h6>
+        </div>
+
+        <!-- Add the extra clearfix for only the required viewport -->
+        <div class="clearfix hidden-sm-up"></div>
+
+        <div class="col-xs-6 col-sm-2">
+            <img src="photos/phteven.jpg" alt="tuna"></img>
+            <h5>Tuna</h5>
+            <label class="btn btn-info" id="tunaLabel">
+				<input type="radio" name="options" id="tuna" autocomplete="off">
+				<span class="glyphicon glyphicon-ok"></span>
+			</label>
+            <h6 id="tunaPercent"></h6>
+        </div>
+        <div class="col-xs-6 col-sm-2">
+            <img src="photos/doug.jpg" alt="doug"></img>
+            <h5>Doug the Pug</h5>
+            <label class="btn btn-info" id="dougLabel">
+				<input type="radio" name="options" id="doug" autocomplete="off">
+				<span class="glyphicon glyphicon-ok"></span>
+			</label>
+            <h6 id="dougPercent"></h6>
+        </div>
+    </div>
+
+    <br>
+    <!-- END PHOTOS TO VOTE -->
+
+    <!-- VOTE BUTTON -->
+    <div class=" col-md-4 center-block">
+    </div>
+    <div class=" col-md-4 center-block">
+        <div id='progress-button' type="button" class="btn btn-info btn-lg btn-block" onclick="submitVote()">Vote</div>
+    </div>
+    <div class=" col-md-4 center-block">
+    </div>
+    <!-- END VOTE BUTTON -->
+
+
+</body>
+
+</html>
