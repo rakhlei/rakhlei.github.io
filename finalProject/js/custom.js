@@ -112,12 +112,16 @@ function submitVote(){
     if (voteSelected){
         // hide radio buttons
         document.getElementById("booLabel").style.display = 'none';
+        document.getElementById("booLabel").checked = 'false';
         document.getElementById("booPercent").innerHTML = "" + Math.round((boo/(boo+marnie+tuna+doug))*100) + "%";
         document.getElementById("marnieLabel").style.display = 'none';
+        document.getElementById("marnieLabel").checked = 'false';
         document.getElementById("marniePercent").innerHTML = "" + Math.round((marnie/(boo+marnie+tuna+doug))*100) + "%";
         document.getElementById("tunaLabel").style.display = 'none';
+        document.getElementById("tunaLabel").checked = 'false';
         document.getElementById("tunaPercent").innerHTML = "" + Math.round((tuna/(boo+marnie+tuna+doug))*100) + "%";
         document.getElementById("dougLabel").style.display = 'none';
+        document.getElementById("dougLabel").checked = 'false';
         document.getElementById("dougPercent").innerHTML = "" + Math.round((doug/(boo+marnie+tuna+doug))*100) + "%";
         voteSelected = false;
     }
