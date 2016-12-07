@@ -19,6 +19,7 @@ var marnie;
 var tuna;
 var doug;
 var voteSelected;
+var voteUpdate;
 
 function preload() {
     song = loadSound("jingleBarks.mp3");
@@ -41,6 +42,7 @@ function setup() {
     xPos = 175;
     n = 0;
     voteSelected = true;
+    voteUpdate = true;
 
     // start each dog with 2 votes
     boo = 2;
@@ -93,22 +95,29 @@ function suggestion() {
 
 
 function submitVote(){
-    if (document.getElementById('boo').checked){
-        boo++;
+    console.log(voteUpdate);
+    if (voteUpdate){
+        if (document.getElementById('boo').checked){
+            boo++;
+            voteSelected = true;
+        }
+        else if (document.getElementById('marnie').checked){
+            marnie++;
+            voteSelected = true;
+        }
+        else if (document.getElementById('tuna').checked){
+            tuna++;
+            voteSelected = true;
+        }
+        else if (document.getElementById('doug').checked){
+            doug++;
+            voteSelected = true;
+        }
+        else{
+            voteSelected = false;
+        }
     }
-    else if (document.getElementById('marnie').checked){
-        marnie++;
-    }
-    else if (document.getElementById('tuna').checked){
-        tuna++;
-    }
-    else if (document.getElementById('doug').checked){
-        doug++;
-    }
-    else{
-        voteSelected = false;
-    }
-    
+
     if (voteSelected){
         // hide radio buttons
         document.getElementById("booLabel").style.display = 'none';
@@ -124,6 +133,7 @@ function submitVote(){
         document.getElementById("dougLabel").checked = 'false';
         document.getElementById("dougPercent").innerHTML = "" + Math.round((doug/(boo+marnie+tuna+doug))*100) + "%";
         voteSelected = false;
+        voteUpdate = false;
     }
 
 }
