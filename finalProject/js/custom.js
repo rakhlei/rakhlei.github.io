@@ -78,8 +78,8 @@ function draw() {
 
     // dog bone size changing in tune w/ song
    if (song.isPlaying()){
-        image(leftBone, 10, 50, fft.getEnergy("bass") - 50, fft.getEnergy("bass") - 50);
-        image(rightBone, windowWidth - 175, 50, fft.getEnergy("bass")-50, fft.getEnergy("bass")-50);
+        image(leftBone, 10, 50, fft.getEnergy("bass") - 50, fft.getEnergy("bass") - 75);
+        image(rightBone, windowWidth - 175, 50, fft.getEnergy("bass")-50, fft.getEnergy("bass")-75);
    }
 
 }
@@ -119,8 +119,9 @@ function submitVote(){
         document.getElementById("tunaPercent").innerHTML = "" + Math.round((tuna/(boo+marnie+tuna+doug))*100) + "%";
         document.getElementById("dougLabel").style.display = 'none';
         document.getElementById("dougPercent").innerHTML = "" + Math.round((doug/(boo+marnie+tuna+doug))*100) + "%";
-    
     }
+
+    voteSelected = false;
 }
 
 
