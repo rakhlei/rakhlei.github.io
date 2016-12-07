@@ -95,8 +95,9 @@ function suggestion() {
 
 
 function submitVote(){
-    console.log(voteUpdate);
-    if (voteUpdate){
+    
+    // update number of votes for each dog
+    if (voteUpdate){ // check to see if valid to update vote
         if (document.getElementById('boo').checked){
             boo++;
             voteSelected = true;
@@ -114,12 +115,14 @@ function submitVote(){
             voteSelected = true;
         }
         else{
+            // no dog selected
             voteSelected = false;
         }
     }
 
-    if (voteSelected){
-        // hide radio buttons
+    
+    if (voteSelected){ // check to make sure dog was selected
+        // hide radio buttons and show each dog's vote percentage
         document.getElementById("booLabel").style.display = 'none';
         document.getElementById("booLabel").checked = 'false';
         document.getElementById("booPercent").innerHTML = "" + Math.round((boo/(boo+marnie+tuna+doug))*100) + "%";
@@ -132,14 +135,17 @@ function submitVote(){
         document.getElementById("dougLabel").style.display = 'none';
         document.getElementById("dougLabel").checked = 'false';
         document.getElementById("dougPercent").innerHTML = "" + Math.round((doug/(boo+marnie+tuna+doug))*100) + "%";
+        
+        // keep programming from re-entering loop after one vote
         voteSelected = false;
+        // keep program from updating vote count
         voteUpdate = false;
     }
 
 }
 
 
-// pause song when nay key is pressed
+// pause song when any key is pressed
 function keyPressed(){
     if(song.isPlaying())
         song.pause();
