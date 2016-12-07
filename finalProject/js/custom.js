@@ -119,9 +119,9 @@ function submitVote(){
         document.getElementById("tunaPercent").innerHTML = "" + Math.round((tuna/(boo+marnie+tuna+doug))*100) + "%";
         document.getElementById("dougLabel").style.display = 'none';
         document.getElementById("dougPercent").innerHTML = "" + Math.round((doug/(boo+marnie+tuna+doug))*100) + "%";
+        voteSelected = false;
     }
 
-    voteSelected = false;
 }
 
 
